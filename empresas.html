@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; }
+
+  .wrap {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .titulo {
+    background: #111111;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: #ffffff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    height: 120px;
+    transition: border-color 0.25s;
+  }
+
+  .card:hover { border-color: #111111; }
+
+  .card-front {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    transition: opacity 0.25s, transform 0.25s;
+  }
+
+  .card:hover .card-front {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  .card-front img {
+    max-width: 100%;
+    max-height: 70px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.25s;
+  }
+
+  .card:hover .card-front img { filter: grayscale(100%); }
+
+  .card-back {
+    position: absolute;
+    inset: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s, transform 0.25s;
+    background: #111111;
+    border-radius: 11px;
+  }
+
+  .card:hover .card-back {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .back-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .back-desc {
+    font-size: 11px;
+    color: #C8C8C8;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .back-link {
+    font-size: 10px;
+    color: #C8C8C8;
+    border: 1px solid #646464;
+    border-radius: 20px;
+    padding: 3px 12px;
+    margin-top: 4px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+
+  .back-link:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="titulo">Empresas</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-front">
+        <img src="./edifica.png" alt="Edifica">
+      </div>
+      <div class="card-back">
+        <div class="back-name">Edifica</div>
+        <div class="back-desc">Incorporadora de empreendimentos residenciais premium em Maringá.</div>
+        <a class="back-link" href="#">Acessar site</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+        <img src="./deltabravo-eng.png" alt="Delta Bravo Engenharia">
+      </div>
+      <div class="card-back">
+        <div class="back-name">Delta Bravo Engenharia</div>
+        <div class="back-desc">Engenharia e gestão técnica de projetos e obras.</div>
+        <a class="back-link" href="#">Acessar site</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+        <img src="./deltabravo-obras.png" alt="Delta Bravo Obras">
+      </div>
+      <div class="card-back">
+        <div class="back-name">Delta Bravo Obras</div>
+        <div class="back-desc">Execução e gestão de obras com foco em qualidade e prazo.</div>
+        <a class="back-link" href="#">Acessar site</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+        <img src="./dbvohub.png" alt="DBVO Hub">
+      </div>
+      <div class="card-back">
+        <div class="back-name">DBVO Hub</div>
+        <div class="back-desc">Central de serviços e tecnologia do grupo DBVO.</div>
+        <a class="back-link" href="#">Acessar site</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+        <img src="./be.png" alt="BE A Moradia do Futuro">
+      </div>
+      <div class="card-back">
+        <div class="back-name">BE</div>
+        <div class="back-desc">Empreendimentos acessíveis e modernos para o futuro.</div>
+        <a class="back-link" href="#">Acessar site</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+        <img src="./dbvo.png" alt="DBVO">
+      </div>
+      <div class="card-back">
+        <div class="back-name">DBVO</div>
+        <div class="back-desc">Holding do grupo, integrando todas as empresas e marcas.</div>
+        <a class="back-link" href="#">Acessar site</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+        <img src="./engine.png" alt="Engine">
+      </div>
+      <div class="card-back">
+        <div class="back-name">Engine</div>
+        <div class="back-desc">Tecnologia e inovação para os processos do grupo.</div>
+        <a class="back-link" href="#">Acessar site</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+        <img src="./inside.png" alt="Inside">
+      </div>
+      <div class="card-back">
+        <div class="back-name">Inside</div>
+        <div class="back-desc">Design de interiores e soluções de decoração.</div>
+        <a class="back-link" href="#">Acessar site</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
